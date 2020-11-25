@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata: 
+  name: ingress-sample
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: ingress-sample.com
+    http:
+      paths:
+      - backend:
+        serviceName: ingress-sample
+        servicePort: 80
